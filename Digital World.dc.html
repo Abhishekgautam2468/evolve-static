@@ -14,6 +14,7 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
+  html,body{max-width:100%;overflow-x:hidden}
   body{background:#080b18;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   ::selection{background:#2ee6c4;color:#07080f}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -21,6 +22,70 @@
   @keyframes orbit1{0%,100%{transform:translate(0,0)}50%{transform:translate(7px,-11px)}}
   @keyframes orbit2{0%,100%{transform:translate(0,0)}50%{transform:translate(-9px,9px)}}
   @keyframes ringpulse{0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(1)}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.06)}}
+
+  /* ---------- responsive: tablet ---------- */
+  @media (max-width:1000px){
+    .grid-2{grid-template-columns:1fr !important;gap:40px !important}
+    .grid-3{grid-template-columns:1fr 1fr !important}
+    .footer-grid{grid-template-columns:1fr 1fr !important}
+    .hero{grid-template-columns:1fr !important;gap:20px !important;padding-top:56px !important}
+  }
+
+  /* ---------- responsive: phone ---------- */
+  @media (max-width:680px){
+    .sec{padding-left:18px !important;padding-right:18px !important}
+    .sec-pad{padding-top:60px !important;padding-bottom:34px !important}
+
+    /* nav */
+    .nav-inner{padding:14px 18px !important}
+    .nav-links{display:none !important}
+    .nav-cta{display:none !important}
+    .nav-burger{display:inline-flex !important}
+
+    /* hero */
+    .hero{padding:40px 18px 36px !important}
+    .hero h1{font-size:36px !important;letter-spacing:-1px !important;margin-bottom:18px !important}
+    .hero p{font-size:16px !important;margin-bottom:26px !important}
+    .hero-cta{flex-direction:column !important;align-items:stretch !important}
+    .hero-cta a{text-align:center !important}
+    .hero-visual{height:auto !important;margin-top:6px !important;display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:10px !important}
+    .hero-visual > div{position:static !important;animation:none !important;top:auto !important;right:auto !important;bottom:auto !important;left:auto !important;width:100% !important;justify-content:center !important}
+
+    /* stats */
+    .stats{gap:14px !important}
+    .stats .stat-num{font-size:27px !important}
+
+    /* section headings */
+    .h2{font-size:30px !important;letter-spacing:-1px !important;line-height:1.12 !important}
+    .h2-cta{font-size:30px !important}
+
+    /* grids -> single column */
+    .grid-2{grid-template-columns:1fr !important;gap:36px !important}
+    .grid-3{grid-template-columns:1fr !important;gap:16px !important}
+    .checks{grid-template-columns:1fr !important}
+
+    /* decorative visuals shrink */
+    .visual{height:300px !important}
+
+    /* logo cards */
+    .logos{gap:12px !important}
+    .logos > div{flex:1 1 calc(50% - 6px) !important;min-width:0 !important;height:62px !important;font-size:16px !important}
+    .logos > div:last-child{flex-basis:100% !important}
+
+    /* footer */
+    .footer-inner{padding:48px 18px 26px !important}
+    .footer-grid{grid-template-columns:1fr 1fr !important;gap:30px 22px !important;text-align:left !important}
+    .f-brand{grid-column:1 / -1 !important;max-width:100% !important;text-align:center !important;padding-bottom:6px !important;border-bottom:1px solid rgba(255,255,255,.06) !important}
+    .f-brandlogo{justify-content:center !important}
+    .f-brand p{margin-left:auto !important;margin-right:auto !important;max-width:330px !important}
+    .f-social{justify-content:center !important}
+    .f-contact{grid-column:1 / -1 !important}
+    .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;gap:16px !important;margin-top:34px !important}
+
+    /* CTA */
+    .cta-box{padding:44px 22px !important}
+  }
+  @media (min-width:681px){ .mobile-menu{display:none !important} }
 </style>
 </helmet>
 
@@ -33,7 +98,7 @@
 
   <!-- ===================== NAV ===================== -->
   <nav style="position:sticky;top:0;z-index:50;background:transparent">
-    <div style="max-width:1600px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
+    <div class="nav-inner" style="max-width:1600px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:12px">
         <div style="position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center">
           <div style="position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,#2ee6c4,#a259ff);box-shadow:0 0 24px rgba(46,230,196,.55);transform:rotate(45deg)"></div>
@@ -41,30 +106,43 @@
         </div>
         <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:#fff">Evolv Digital</span>
       </div>
-      <div style="display:flex;align-items:center;gap:38px">
+      <div class="nav-links" style="display:flex;align-items:center;gap:38px">
         <a href="#services" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Services</a>
         <a href="#secure" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Why us</a>
         <a href="#team" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Team</a>
         <a href="#platform" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Platform</a>
         <a href="#community" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Community</a>
       </div>
-      <a href="#contact" style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:11px 22px;border-radius:999px;text-decoration:none;box-shadow:0 0 24px rgba(46,230,196,.35);transition:transform .18s" style-hover="transform:translateY(-1px)">Start a project<span style="font-size:15px;line-height:1">&rarr;</span></a>
+      <a href="#contact" class="nav-cta" style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:11px 22px;border-radius:999px;text-decoration:none;box-shadow:0 0 24px rgba(46,230,196,.35);transition:transform .18s" style-hover="transform:translateY(-1px)">Start a project<span style="font-size:15px;line-height:1">&rarr;</span></a>
+      <button class="nav-burger" onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);cursor:pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eef0f7" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
+    <sc-if value="{{ menuOpen }}">
+    <div class="mobile-menu" style="display:flex;flex-direction:column;gap:4px;margin:4px 12px 0;padding:14px;background:rgba(12,15,28,.97);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.55)">
+      <a href="#services" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Services</a>
+      <a href="#secure" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Why us</a>
+      <a href="#team" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Team</a>
+      <a href="#platform" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Platform</a>
+      <a href="#community" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Community</a>
+      <a href="#contact" onclick="{{ closeMenu }}" style="margin-top:6px;text-align:center;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:13px 18px;border-radius:999px;text-decoration:none">Start a project</a>
+    </div>
+    </sc-if>
   </nav>
 
   <!-- ===================== HERO ===================== -->
-  <header style="position:relative;z-index:1;overflow:hidden;max-width:1600px;margin:0 auto;padding:84px 32px 60px;display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center">
+  <header class="hero" style="position:relative;z-index:1;overflow:hidden;max-width:1600px;margin:0 auto;padding:84px 32px 60px;display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center">
     <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none"></canvas>
     <div style="position:relative;z-index:2">
       <div style="font-size:12px;letter-spacing:3px;font-weight:700;color:#2ee6c4;margin-bottom:22px;text-transform:uppercase">Strategy · Design · Development</div>
       <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:60px;line-height:1.04;letter-spacing:-2px;color:#fff;margin-bottom:22px;text-wrap:balance">The Future of Your Brand Is Here</h1>
       <p style="font-size:18px;line-height:1.6;color:#9aa0b4;max-width:540px;margin-bottom:34px">We build brands and digital products trusted by ambitious teams — engineered for speed, designed to convert, and shipped on time.</p>
-      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+      <div class="hero-cta" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
         <a href="#contact" style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 0 30px rgba(46,230,196,.4)">Start a project</a>
         <a href="#services" style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#eef0f7;background:transparent;padding:14px 28px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.18)" style-hover="border-color:rgba(46,230,196,.6)">See our work</a>
       </div>
     </div>
-    <div style="position:relative;z-index:2;height:440px">
+    <div class="hero-visual" style="position:relative;z-index:2;height:440px">
       <div style="position:absolute;top:18px;right:30px;display:flex;align-items:center;gap:9px;background:rgba(15,18,32,.92);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.5);animation:orbit1 6s ease-in-out infinite">
         <div style="width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2ee6c4,#14b8a6);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06231b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg></div>
         <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:600">+128% organic traffic</span>
@@ -82,24 +160,24 @@
 
   <!-- ===================== STATS ===================== -->
   <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
-  <section style="position:relative;z-index:1;max-width:760px;margin:0 auto 30px;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+  <section class="sec stats" style="position:relative;z-index:1;max-width:760px;margin:0 auto 30px;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div style="background:rgba(13,16,30,.6);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 24px;text-align:center">
       <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#2ee6c4;margin-bottom:12px;font-weight:600">Revenue influenced</div>
-      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.5px">$42,000,000+</div>
+      <div class="stat-num" style="font-family:'Sora',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.5px">$42,000,000+</div>
     </div>
     <div style="background:rgba(13,16,30,.6);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 24px;text-align:center">
       <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#2ee6c4;margin-bottom:12px;font-weight:600">Projects shipped</div>
-      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.5px">240</div>
+      <div class="stat-num" style="font-family:'Sora',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:-.5px">240</div>
     </div>
   </section>
   </sc-if>
 
   <!-- ===================== SERVICES ===================== -->
-  <section id="services" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px 40px;text-align:center">
-    <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:46px;letter-spacing:-1.5px;color:#fff;margin-bottom:18px">Take full control of your brand</h2>
+  <section id="services" class="sec sec-pad" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px 40px;text-align:center">
+    <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:46px;letter-spacing:-1.5px;color:#fff;margin-bottom:18px">Take full control of your brand</h2>
     <p style="font-size:16.5px;line-height:1.6;color:#9aa0b4;max-width:620px;margin:0 auto 56px">Marketing and engineering under one roof, focused on one thing: building the best growth environment for your business.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <!-- card 1 blue -->
       <div style="position:relative;background:radial-gradient(120% 72% at 50% -6%,rgba(79,124,255,.16),transparent 56%),linear-gradient(180deg,rgba(20,24,40,.9),rgba(12,15,26,.92));border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:38px 24px 30px;overflow:hidden" style-hover="border-color:rgba(79,124,255,.4)">
         <div style="width:72px;height:72px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 10px 20px rgba(79,124,255,.5));animation:floaty 4.6s ease-in-out infinite"><svg width="72" height="72" viewBox="0 0 80 80" fill="none"><defs><linearGradient id="i1t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6e3ff"/><stop offset="1" stop-color="#7aa0ff"/></linearGradient><linearGradient id="i1l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f6cf5"/><stop offset="1" stop-color="#2746c2"/></linearGradient><linearGradient id="i1r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f8aff"/><stop offset="1" stop-color="#3454cf"/></linearGradient></defs><path d="M40 8 70 25 40 42 10 25Z" fill="url(#i1t)"/><path d="M10 25 40 42 40 76 10 59Z" fill="url(#i1l)"/><path d="M70 25 40 42 40 76 70 59Z" fill="url(#i1r)"/><path d="M40 13 58 23.5 40 34 22 23.5Z" fill="#fff" opacity=".18"/></svg></div>
@@ -140,9 +218,9 @@
   </section>
 
   <!-- ===================== SECURE / WHY US ===================== -->
-  <section id="secure" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+  <section id="secure" class="sec grid-2" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <!-- big cube cluster -->
-    <div style="position:relative;height:380px">
+    <div class="visual" style="position:relative;height:380px">
       <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(79,124,255,.3),transparent 64%);filter:blur(8px)"></div>
       <svg viewBox="0 0 340 380" style="position:absolute;inset:0;width:100%;height:100%" stroke="rgba(255,255,255,.13)" stroke-width="1.4" fill="none">
         <line x1="170" y1="190" x2="62" y2="92"></line>
@@ -166,9 +244,9 @@
       <div style="position:absolute;bottom:42px;right:66px;width:34px;height:37px;filter:drop-shadow(0 6px 14px rgba(224,82,160,.5));animation:orbit1 8.5s ease-in-out infinite"><svg width="34" height="37" viewBox="0 0 40 44" fill="none"><path d="M20 2 38 12 20 22 2 12Z" fill="#ffb0d8"/><path d="M2 12 20 22 20 42 2 32Z" fill="#9c1f66"/><path d="M38 12 20 22 20 42 38 32Z" fill="#e052a0"/></svg></div>
     </div>
     <div>
-      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:18px">Built to perform.<br>Designed to convert.</h2>
+      <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:18px">Built to perform.<br>Designed to convert.</h2>
       <p style="font-size:16px;line-height:1.65;color:#9aa0b4;margin-bottom:28px;max-width:580px">We've been in this industry too long to treat quality as optional. Every build ships measurable — audited for speed, accessibility and conversion before it ever sees traffic.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 24px">
+      <div class="checks" style="display:grid;grid-template-columns:1fr 1fr;gap:18px 24px">
         <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(46,230,196,.14);border:1px solid rgba(46,230,196,.4);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span style="font-size:14.5px;color:#cfd3e0;line-height:1.4">Constant testing of every release</span></div>
         <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(46,230,196,.14);border:1px solid rgba(46,230,196,.4);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span style="font-size:14.5px;color:#cfd3e0;line-height:1.4">Your data is as secure as possible</span></div>
         <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(46,230,196,.14);border:1px solid rgba(46,230,196,.4);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span style="font-size:14.5px;color:#cfd3e0;line-height:1.4">Clean, maintainable codebases</span></div>
@@ -178,15 +256,15 @@
   </section>
 
   <!-- ===================== TEAM / OWNED BY YOU ===================== -->
-  <section id="team" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+  <section id="team" class="sec grid-2" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <div>
-      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px">Senior team.<br>No hand-offs.</h2>
+      <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px">Senior team.<br>No hand-offs.</h2>
       <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:18px;max-width:580px">Unlike agencies that bait with seniors and switch to juniors, the people who pitch your project are the ones who build it. That's the whole model.</p>
       <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:18px;max-width:580px">Want a partner who's invested in outcomes? We tie our engagements to your metrics and report on them every single week — no vanity dashboards.</p>
       <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;max-width:580px">Want to move fast without breaking trust? Strategy, design and engineering sit on one team, so nothing gets lost in translation.</p>
     </div>
     <!-- coins / rewards visual -->
-    <div style="position:relative;height:360px;display:flex;align-items:center;justify-content:center">
+    <div class="visual" style="position:relative;height:360px;display:flex;align-items:center;justify-content:center">
       <div style="position:absolute;top:54%;left:50%;width:260px;height:260px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(162,89,255,.3),transparent 64%);filter:blur(8px)"></div>
       <!-- iso platform base -->
       <div style="position:absolute;bottom:64px;left:50%;transform:translateX(-50%) rotate(45deg) scaleY(.56);width:170px;height:170px;border-radius:24px;background:linear-gradient(135deg,rgba(79,124,255,.5),rgba(162,89,255,.4));border:1px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(79,124,255,.4)"></div>
@@ -202,9 +280,9 @@
   </section>
 
   <!-- ===================== PLATFORM / LAYER 2 ===================== -->
-  <section id="platform" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+  <section id="platform" class="sec grid-2" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <!-- lightning visual -->
-    <div style="position:relative;height:360px;display:flex;align-items:center;justify-content:center">
+    <div class="visual" style="position:relative;height:360px;display:flex;align-items:center;justify-content:center">
       <div style="position:absolute;top:50%;left:50%;width:230px;height:230px;border-radius:50%;border:1px solid rgba(46,230,196,.3);animation:ringpulse 4s ease-in-out infinite"></div>
       <div style="position:absolute;top:50%;left:50%;width:320px;height:320px;border-radius:50%;border:1px solid rgba(46,230,196,.16);animation:ringpulse 5s ease-in-out infinite"></div>
       <div style="position:absolute;top:50%;left:50%;width:280px;height:280px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(46,230,196,.28),transparent 62%);filter:blur(8px)"></div>
@@ -214,7 +292,7 @@
       <div style="position:absolute;top:74px;left:50%;transform:translateX(-50%);width:96px;height:150px;clip-path:polygon(54% 0,16% 58%,44% 58%,30% 100%,86% 38%,55% 38%,70% 0);background:linear-gradient(160deg,#8ef0ff,#2ee6c4 45%,#4f7cff);box-shadow:0 0 36px rgba(46,230,196,.7);filter:drop-shadow(0 10px 20px rgba(79,124,255,.5));animation:floaty 5s ease-in-out infinite"></div>
     </div>
     <div>
-      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:26px">Take full advantage of everything the modern web has to offer.</h2>
+      <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:26px">Take full advantage of everything the modern web has to offer.</h2>
       <div style="display:flex;flex-direction:column;gap:16px">
         <div style="display:flex;align-items:center;gap:13px"><div style="width:26px;height:26px;border-radius:8px;background:rgba(46,230,196,.14);border:1px solid rgba(46,230,196,.35);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span style="font-size:15px;color:#cfd3e0">Say goodbye to slow, bloated pages</span></div>
         <div style="display:flex;align-items:center;gap:13px"><div style="width:26px;height:26px;border-radius:8px;background:rgba(46,230,196,.14);border:1px solid rgba(46,230,196,.35);display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span style="font-size:15px;color:#cfd3e0">Ship updates in hours, not weeks</span></div>
@@ -227,15 +305,15 @@
   </section>
 
   <!-- ===================== COMMUNITY / MEMES ===================== -->
-  <section id="community" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px 60px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+  <section id="community" class="sec grid-2" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px 60px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <div>
-      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px">Come for the launch,<br>stay for the growth.</h2>
+      <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px">Come for the launch,<br>stay for the growth.</h2>
       <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:18px;max-width:580px">Shipping is the start, not the finish line. We stick around — iterating, testing and optimising long after the confetti settles.</p>
       <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:30px;max-width:580px">Join our monthly note for the playbooks, experiments and behind-the-scenes builds we usually keep to ourselves.</p>
       <a href="#contact" style="display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:13px 26px;border-radius:999px;text-decoration:none;box-shadow:0 0 28px rgba(46,230,196,.4)">Get the playbook</a>
     </div>
     <!-- chat mockup -->
-    <div style="position:relative;height:340px;display:flex;align-items:center;justify-content:center">
+    <div class="visual" style="position:relative;height:340px;display:flex;align-items:center;justify-content:center">
       <div style="position:absolute;top:50%;left:50%;width:300px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(224,82,160,.22),transparent 64%);filter:blur(10px)"></div>
       <div style="position:relative;width:380px;max-width:100%;background:linear-gradient(180deg,rgba(18,21,38,.96),rgba(12,14,26,.96));border:1px solid rgba(255,255,255,.1);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5);overflow:hidden">
         <div style="display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.07)">
@@ -258,9 +336,9 @@
   </section>
 
   <!-- ===================== BACKED BY / LOGOS ===================== -->
-  <section id="contact" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:40px 32px 70px;text-align:center">
+  <section id="contact" class="sec" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:40px 32px 70px;text-align:center">
     <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#7b8098;font-weight:600;margin-bottom:34px">Backed by the best</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+    <div class="logos" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
       <div style="display:flex;align-items:center;justify-content:center;height:78px;flex:1;min-width:150px;background:rgba(13,16,28,.5);border:1px solid rgba(255,255,255,.06);border-radius:14px;color:#727890;font-family:'Sora',sans-serif;font-weight:700;font-size:18px">Vertex</div>
       <div style="display:flex;align-items:center;justify-content:center;height:78px;flex:1;min-width:150px;background:rgba(13,16,28,.5);border:1px solid rgba(255,255,255,.06);border-radius:14px;color:#727890;font-family:'Sora',sans-serif;font-weight:700;font-size:18px">Orbital</div>
       <div style="display:flex;align-items:center;justify-content:center;height:78px;flex:1;min-width:150px;background:rgba(13,16,28,.5);border:1px solid rgba(255,255,255,.06);border-radius:14px;color:#727890;font-family:'Sora',sans-serif;font-weight:700;font-size:18px">Halcyon</div>
@@ -270,10 +348,10 @@
   </section>
 
   <!-- ===================== CTA ===================== -->
-  <section style="position:relative;z-index:1;max-width:1600px;margin:0 auto 80px;padding:0 32px">
-    <div style="position:relative;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,rgba(46,230,196,.12),rgba(162,89,255,.14));padding:60px 40px;text-align:center">
+  <section class="sec" style="position:relative;z-index:1;max-width:1600px;margin:0 auto 80px;padding:0 32px">
+    <div class="cta-box" style="position:relative;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,rgba(46,230,196,.12),rgba(162,89,255,.14));padding:60px 40px;text-align:center">
       <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:520px;height:300px;background:radial-gradient(circle,rgba(162,89,255,.3),transparent 64%);filter:blur(10px);pointer-events:none"></div>
-      <h2 style="position:relative;font-family:'Sora',sans-serif;font-weight:800;font-size:44px;letter-spacing:-1.5px;color:#fff;margin-bottom:16px;text-wrap:balance">Let's build something worth remembering</h2>
+      <h2 class="h2-cta" style="position:relative;font-family:'Sora',sans-serif;font-weight:800;font-size:44px;letter-spacing:-1.5px;color:#fff;margin-bottom:16px;text-wrap:balance">Let's build something worth remembering</h2>
       <p style="position:relative;font-size:17px;line-height:1.6;color:#c2c6d6;max-width:540px;margin:0 auto 30px">Tell us about your project. We'll reply within 24 hours with a plan and a ballpark.</p>
       <a href="#" style="position:relative;display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:16px 36px;border-radius:999px;text-decoration:none;box-shadow:0 0 34px rgba(46,230,196,.45)">Book a free strategy call</a>
     </div>
@@ -283,11 +361,11 @@
   <footer style="position:relative;z-index:1;overflow:hidden;border-top:1px solid rgba(255,255,255,.07);background:linear-gradient(180deg,rgba(10,13,26,0),rgba(8,10,20,.6))">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(46,230,196,.5),rgba(162,89,255,.5),transparent)"></div>
     <div style="position:absolute;bottom:-160px;left:50%;transform:translateX(-50%);width:680px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(46,230,196,.10),transparent 65%);filter:blur(20px);pointer-events:none"></div>
-    <div style="position:relative;max-width:1600px;margin:0 auto;padding:64px 32px 28px">
-      <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:40px 32px">
+    <div class="footer-inner" style="position:relative;max-width:1600px;margin:0 auto;padding:64px 32px 28px">
+      <div class="footer-grid" style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:40px 32px">
         <!-- brand -->
-        <div style="max-width:320px">
-          <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px">
+        <div class="f-brand" style="max-width:320px">
+          <div class="f-brandlogo" style="display:flex;align-items:center;gap:11px;margin-bottom:18px">
             <div style="position:relative;width:30px;height:30px;display:flex;align-items:center;justify-content:center">
               <div style="position:absolute;inset:0;border-radius:9px;background:linear-gradient(135deg,#2ee6c4,#a259ff);box-shadow:0 0 20px rgba(46,230,196,.5);transform:rotate(45deg)"></div>
               <div style="position:relative;width:8px;height:8px;border-radius:50%;background:#080b18"></div>
@@ -295,7 +373,7 @@
             <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.4px;color:#fff">Evolv Digital</span>
           </div>
           <p style="font-size:13.5px;line-height:1.65;color:#8e93a8;margin-bottom:22px">Brands and digital products engineered for speed and designed to convert — strategy, design and engineering under one roof.</p>
-          <div style="display:flex;gap:10px">
+          <div class="f-social" style="display:flex;gap:10px">
             <a href="#" aria-label="X" style="width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;transition:all .18s" style-hover="border-color:rgba(46,230,196,.5);background:rgba(46,230,196,.08)"><svg width="15" height="15" viewBox="0 0 24 24" fill="#aab0c4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
             <a href="#" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;transition:all .18s" style-hover="border-color:rgba(46,230,196,.5);background:rgba(46,230,196,.08)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#aab0c4"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"></path></svg></a>
             <a href="#" aria-label="Instagram" style="width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;transition:all .18s" style-hover="border-color:rgba(46,230,196,.5);background:rgba(46,230,196,.08)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aab0c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#aab0c4" stroke="none"></circle></svg></a>
@@ -323,7 +401,7 @@
           </div>
         </div>
         <!-- contact -->
-        <div>
+        <div class="f-contact">
           <div style="font-family:'Sora',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#6c7188;font-weight:600;margin-bottom:18px">Get in touch</div>
           <div style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.55;color:#9aa0b4;margin-bottom:16px">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -336,7 +414,7 @@
         </div>
       </div>
       <!-- bottom bar -->
-      <div style="margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+      <div class="footer-bottom" style="margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
         <div style="font-size:13px;color:#62667c">© 2026 Evolv Digital. All rights reserved.</div>
         <div style="display:flex;gap:26px;font-size:13px">
           <a href="#" style="color:#7b8098;text-decoration:none;transition:color .18s" style-hover="color:#fff">Privacy Policy</a>
@@ -353,6 +431,8 @@
 class Component extends DCLogic {
   componentDidMount() { this.startHero(); }
   componentWillUnmount() { if (this.raf) cancelAnimationFrame(this.raf); }
+  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
+  closeMenu = () => this.setState({ menuOpen: false });
   startHero() {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
@@ -415,7 +495,14 @@ class Component extends DCLogic {
     };
     if (animate) this.raf = requestAnimationFrame(draw); else draw(0);
   }
-  renderVals() { return { showStats: this.props.showStats ?? true }; }
+  renderVals() {
+    return {
+      showStats: this.props.showStats ?? true,
+      menuOpen: this.state.menuOpen ?? false,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu
+    };
+  }
 }
 </script>
 </body>
