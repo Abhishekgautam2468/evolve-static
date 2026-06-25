@@ -38,9 +38,6 @@
 
     /* nav */
     .nav-inner{padding:14px 18px !important}
-    .nav-links{display:none !important}
-    .nav-cta{display:none !important}
-    .nav-burger{display:inline-flex !important}
 
     /* hero */
     .hero{padding:40px 18px 36px !important}
@@ -84,7 +81,6 @@
     /* CTA */
     .cta-box{padding:44px 22px !important}
   }
-  @media (min-width:681px){ .mobile-menu{display:none !important} }
 </style>
 </helmet>
 
@@ -105,28 +101,8 @@
         </div>
         <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:#fff">Evolv Digital</span>
       </div>
-      <div class="nav-links" style="display:flex;align-items:center;gap:38px">
-        <a href="#services" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Services</a>
-        <a href="#secure" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Why Us</a>
-        <a href="#team" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Team</a>
-        <a href="#platform" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Platform</a>
-        <a href="#community" style="color:#c2c7d8;text-decoration:none;font-size:14.5px;font-weight:500;transition:color .18s" style-hover="color:#fff">Insights</a>
-      </div>
-      <a href="#contact" class="nav-cta" style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:11px 22px;border-radius:999px;text-decoration:none;box-shadow:0 0 24px rgba(46,230,196,.35);transition:transform .18s" style-hover="transform:translateY(-1px)">Start a project<span style="font-size:15px;line-height:1">&rarr;</span></a>
-      <button class="nav-burger" onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);cursor:pointer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eef0f7" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
+      <a href="#contact" data-open-contact class="nav-cta" style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:11px 22px;border-radius:999px;text-decoration:none;box-shadow:0 0 24px rgba(46,230,196,.35);transition:transform .18s" style-hover="transform:translateY(-1px)">Start a project<span style="font-size:15px;line-height:1">&rarr;</span></a>
     </div>
-    <sc-if value="{{ menuOpen }}">
-    <div class="mobile-menu" style="display:flex;flex-direction:column;gap:4px;margin:4px 12px 0;padding:14px;background:rgba(12,15,28,.97);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.55)">
-      <a href="#services" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Services</a>
-      <a href="#secure" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Why Us</a>
-      <a href="#team" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Team</a>
-      <a href="#platform" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Platform</a>
-      <a href="#community" onclick="{{ closeMenu }}" style="color:#c2c7d8;text-decoration:none;font-size:16px;font-weight:600;padding:12px 10px;border-radius:10px">Insights</a>
-      <a href="#contact" onclick="{{ closeMenu }}" style="margin-top:6px;text-align:center;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:13px 18px;border-radius:999px;text-decoration:none">Start a project</a>
-    </div>
-    </sc-if>
   </nav>
 
   <!-- ===================== HERO ===================== -->
@@ -137,8 +113,7 @@
       <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:60px;line-height:1.04;letter-spacing:-2px;color:#fff;margin-bottom:22px;text-wrap:balance">Digital products, engineered to grow</h1>
       <p style="font-size:18px;line-height:1.6;color:#9aa0b4;max-width:540px;margin-bottom:34px">Evolv Digital is a design, development, and marketing studio. We help ambitious teams launch faster, convert better, and scale without rebuilding from scratch.</p>
       <div class="hero-cta" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-        <a href="#contact" style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 0 30px rgba(46,230,196,.4)">Start a project</a>
-        <a href="#services" style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#eef0f7;background:transparent;padding:14px 28px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.18)" style-hover="border-color:rgba(46,230,196,.6)">See our work</a>
+        <a href="#contact" data-open-contact style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 0 30px rgba(46,230,196,.4)">Start a project</a>
       </div>
     </div>
     <div class="hero-visual" style="position:relative;z-index:2;height:440px">
@@ -303,37 +278,6 @@
     </div>
   </section>
 
-  <!-- ===================== COMMUNITY / MEMES ===================== -->
-  <section id="community" class="sec grid-2" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:96px 32px 60px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-    <div>
-      <h2 class="h2" style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px">Come for the launch,<br>stay for the growth.</h2>
-      <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:18px;max-width:580px">Launch is the start, not the finish line. We stay on — iterating, testing, and optimising long after go-live.</p>
-      <p style="font-size:15.5px;line-height:1.7;color:#9aa0b4;margin-bottom:30px;max-width:580px">Join our monthly newsletter for the playbooks, experiments, and build notes we usually keep in-house.</p>
-      <a href="#contact" style="display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:13px 26px;border-radius:999px;text-decoration:none;box-shadow:0 0 28px rgba(46,230,196,.4)">Get the playbook</a>
-    </div>
-    <!-- chat mockup -->
-    <div class="visual" style="position:relative;height:340px;display:flex;align-items:center;justify-content:center">
-      <div style="position:absolute;top:50%;left:50%;width:300px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(224,82,160,.22),transparent 64%);filter:blur(10px)"></div>
-      <div style="position:relative;width:380px;max-width:100%;background:linear-gradient(180deg,rgba(18,21,38,.96),rgba(12,14,26,.96));border:1px solid rgba(255,255,255,.1);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5);overflow:hidden">
-        <div style="display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.07)">
-          <div style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></div>
-          <div style="width:11px;height:11px;border-radius:50%;background:#febc2e"></div>
-          <div style="width:11px;height:11px;border-radius:50%;background:#28c840"></div>
-          <span style="margin-left:8px;font-size:12.5px;color:#838aa0;font-weight:600">#growth-channel</span>
-        </div>
-        <div style="padding:18px 16px;display:flex;flex-direction:column;gap:12px">
-          <div style="align-self:flex-start;max-width:78%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:10px 14px;border-radius:14px 14px 14px 4px;font-size:13.5px;color:#d7dbe8">Traffic just doubled this month 🚀</div>
-          <div style="align-self:flex-end;max-width:78%;background:linear-gradient(135deg,#2ee6c4,#4f7cff);padding:10px 14px;border-radius:14px 14px 4px 14px;font-size:13.5px;color:#07101f;font-weight:600">Told you the new funnel would land 😎</div>
-          <div style="align-self:flex-start;max-width:78%;background:linear-gradient(135deg,#a259ff,#e052a0);padding:10px 14px;border-radius:14px 14px 14px 4px;font-size:13.5px;color:#fff;font-weight:600">Conversion up 38% too 🔥</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-top:1px solid rgba(255,255,255,.07)">
-          <div style="flex:1;height:34px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;padding:0 14px;font-size:13px;color:#717892">Message #growth-channel…</div>
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2ee6c4,#26d4b0);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#07080f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== BACKED BY / LOGOS ===================== -->
   <section id="contact" class="sec" style="position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:40px 32px 70px;text-align:center">
     <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#7b8098;font-weight:600;margin-bottom:34px">Trusted by ambitious brands</p>
@@ -352,7 +296,7 @@
       <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:520px;height:300px;background:radial-gradient(circle,rgba(162,89,255,.3),transparent 64%);filter:blur(10px);pointer-events:none"></div>
       <h2 class="h2-cta" style="position:relative;font-family:'Sora',sans-serif;font-weight:800;font-size:44px;letter-spacing:-1.5px;color:#fff;margin-bottom:16px;text-wrap:balance">Let's build something worth remembering</h2>
       <p style="position:relative;font-size:17px;line-height:1.6;color:#c2c6d6;max-width:540px;margin:0 auto 30px">Tell us about your project and we'll reply within 24 hours with a plan and a ballpark estimate.</p>
-      <a href="#" style="position:relative;display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:16px 36px;border-radius:999px;text-decoration:none;box-shadow:0 0 34px rgba(46,230,196,.45)">Book a free strategy call</a>
+      <a href="#contact" data-open-contact style="position:relative;display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:16px 36px;border-radius:999px;text-decoration:none;box-shadow:0 0 34px rgba(46,230,196,.45)">Book a free strategy call</a>
     </div>
   </section>
 
@@ -402,7 +346,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span>Adarsh Nagar, Rampur,<br>Jabalpur, Madhya Pradesh &ndash; 482008</span>
           </div>
-          <a href="mailto:info@evolvdigital.in" style="display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:#fff;text-decoration:none;font-weight:600;padding:9px 14px;border-radius:10px;border:1px solid rgba(46,230,196,.3);background:rgba(46,230,196,.08);transition:all .18s" style-hover="background:rgba(46,230,196,.16);border-color:rgba(46,230,196,.55)">
+          <a href="#contact" data-open-contact style="display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:#fff;text-decoration:none;font-weight:600;padding:9px 14px;border-radius:10px;border:1px solid rgba(46,230,196,.3);background:rgba(46,230,196,.08);transition:all .18s" style-hover="background:rgba(46,230,196,.16);border-color:rgba(46,230,196,.55)">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ee6c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
             info@evolvdigital.in
           </a>
@@ -420,14 +364,133 @@
     </div>
   </footer>
 
+  <!-- ===================== CONTACT MODAL ===================== -->
+  <div id="contact-modal" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:24px">
+    <div data-close-contact style="position:absolute;inset:0;background:rgba(5,7,15,.74);backdrop-filter:blur(6px)"></div>
+    <div role="dialog" aria-modal="true" aria-label="Start a project" style="position:relative;width:520px;max-width:100%;max-height:90vh;overflow-y:auto;background:linear-gradient(180deg,rgba(18,21,38,.98),rgba(11,13,25,.98));border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:0 30px 80px rgba(0,0,0,.6)">
+      <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:70%;height:1px;background:linear-gradient(90deg,transparent,rgba(46,230,196,.6),rgba(162,89,255,.6),transparent)"></div>
+      <button type="button" data-close-contact aria-label="Close" style="position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#c2c7d8;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1">&times;</button>
+      <div style="padding:34px 32px 32px">
+        <h3 style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.8px;color:#fff;margin-bottom:8px">Start a project</h3>
+        <p style="font-size:14.5px;line-height:1.6;color:#9aa0b4;margin-bottom:24px">Tell us about your project and we'll reply within 24 hours. Your message goes straight to <span style="color:#2ee6c4">info@evolvdigital.in</span>.</p>
+        <form id="contact-form" style="display:flex;flex-direction:column;gap:15px">
+          <input type="hidden" name="access_key" value="e3ab2d6d-d2f3-47c4-90be-d1ce578608b3">
+          <input type="hidden" name="subject" value="New project enquiry from the website">
+          <input type="hidden" name="from_name" value="Evolv Digital website">
+          <input type="text" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#c2c7d8;margin-bottom:7px">Name</label>
+            <input name="name" type="text" required placeholder="Your name" style="width:100%;font-family:'Manrope',sans-serif;font-size:14.5px;color:#eef0f7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;outline:none">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#c2c7d8;margin-bottom:7px">Email</label>
+            <input name="email" type="email" required placeholder="you@company.com" style="width:100%;font-family:'Manrope',sans-serif;font-size:14.5px;color:#eef0f7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;outline:none">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#c2c7d8;margin-bottom:7px">Project type</label>
+            <select name="projectType" style="width:100%;font-family:'Manrope',sans-serif;font-size:14.5px;color:#eef0f7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;outline:none">
+              <option style="color:#000">Web Development</option>
+              <option style="color:#000">UI/UX Design</option>
+              <option style="color:#000">Performance Marketing</option>
+              <option style="color:#000">Brand Strategy</option>
+              <option style="color:#000">SEO &amp; Content</option>
+              <option style="color:#000">App Development</option>
+              <option style="color:#000">Something else</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#c2c7d8;margin-bottom:7px">Project details</label>
+            <textarea name="message" rows="4" required placeholder="What are you looking to build?" style="width:100%;font-family:'Manrope',sans-serif;font-size:14.5px;color:#eef0f7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;outline:none;resize:vertical"></textarea>
+          </div>
+          <button type="submit" id="contact-submit" style="margin-top:4px;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:#07080f;background:linear-gradient(135deg,#2ee6c4,#26d4b0);padding:14px 24px;border:none;border-radius:999px;cursor:pointer;box-shadow:0 0 28px rgba(46,230,196,.4)">Send message</button>
+          <p id="contact-status" style="display:none;font-size:13.5px;line-height:1.5;text-align:center;margin-top:2px"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </div>
 </x-dc>
+<script>
+(function () {
+  function getModal() { return document.getElementById('contact-modal'); }
+
+  function openModal() {
+    var modal = getModal();
+    if (!modal) return;
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var first = modal.querySelector('input[name="name"]');
+    if (first) setTimeout(function () { first.focus(); }, 30);
+  }
+  function closeModal() {
+    var modal = getModal();
+    if (!modal) return;
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Delegated listeners attached to document so they work even though the
+  // DC framework renders the markup asynchronously.
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (t && t.closest) {
+      if (t.closest('[data-open-contact]')) { e.preventDefault(); openModal(); return; }
+      if (t.closest('[data-close-contact]')) { e.preventDefault(); closeModal(); return; }
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    var modal = getModal();
+    if (e.key === 'Escape' && modal && modal.style.display === 'flex') closeModal();
+  });
+
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (!form || form.id !== 'contact-form') return;
+    e.preventDefault();
+
+    var btn = document.getElementById('contact-submit');
+    var status = document.getElementById('contact-status');
+    function setStatus(msg, color) {
+      if (!status) return;
+      status.textContent = msg;
+      status.style.color = color;
+      status.style.display = 'block';
+    }
+
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; btn.style.opacity = '.7'; btn.style.cursor = 'default'; }
+    setStatus('', '#9aa0b4');
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.success) {
+          setStatus("Thanks! Your message has been sent — we'll reply within 24 hours.", '#2ee6c4');
+          form.reset();
+          if (btn) { btn.textContent = 'Sent ✓'; }
+        } else {
+          setStatus(res.message || 'Something went wrong. Please try again.', '#ff6b6b');
+          if (btn) { btn.disabled = false; btn.textContent = 'Send message'; btn.style.opacity = '1'; btn.style.cursor = 'pointer'; }
+        }
+      })
+      .catch(function () {
+        setStatus('Network error. Please try again or email us directly.', '#ff6b6b');
+        if (btn) { btn.disabled = false; btn.textContent = 'Send message'; btn.style.opacity = '1'; btn.style.cursor = 'pointer'; }
+      });
+  }, true);
+})();
+</script>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1160},&quot;animateHero&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;particleDensity&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:90,&quot;min&quot;:40,&quot;max&quot;:160,&quot;step&quot;:10,&quot;tsType&quot;:&quot;number&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
   componentDidMount() { this.startHero(); }
   componentWillUnmount() { if (this.raf) cancelAnimationFrame(this.raf); }
-  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
-  closeMenu = () => this.setState({ menuOpen: false });
   startHero() {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
@@ -492,10 +555,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     return {
-      showStats: this.props.showStats ?? true,
-      menuOpen: this.state.menuOpen ?? false,
-      toggleMenu: this.toggleMenu,
-      closeMenu: this.closeMenu
+      showStats: this.props.showStats ?? true
     };
   }
 }
